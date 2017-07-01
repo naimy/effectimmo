@@ -1,0 +1,15 @@
+{
+  "JSToLoad": [
+    "header",
+    "footer",
+    "/search/init"
+  ],
+  "CSSToLoad": [
+    "header",
+    "footer"
+  ],
+  "JSToInit": [
+    "header",
+    "footer"
+  ]
+}

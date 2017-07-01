@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Home extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,8 +18,16 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
+    public function index()
+    {
+
+        $json = file_get_contents("assets/conf/conf.json");
+        $data['JSON'] = json_decode ($json);
+
+
+        $this->smarty->debugging = true;
+        $data['title'] = 'hello world';
+        $data['content'] = "Hello";
+        $this->smarty->view('layout.tpl',$data);
+    }
 }
